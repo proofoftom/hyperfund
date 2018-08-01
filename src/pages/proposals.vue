@@ -1,6 +1,7 @@
 <template>
   <q-page class="flex flex-center column">
     <h3 class="row">Proposals</h3>
+    <Proposals/>
   </q-page>
 </template>
 
@@ -8,7 +9,10 @@
 </style>
 
 <script>
+import Proposals from '../components/Proposals.vue';
+
 export default {
   name: 'PageProposals',
+  components: { Proposals },
 };
 </script>
