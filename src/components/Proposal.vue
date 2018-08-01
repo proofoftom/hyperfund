@@ -41,20 +41,20 @@ export default {
     proposal: Object,
   },
   methods: {
-    cancelProposal(key) {
-      proposalsRef.child(key).remove();
+    cancelProposal(_key) {
+      proposalsRef.child(_key).remove();
     },
-    updateProposal(key) {
-      proposalsRef.child(key).update({ edit: true });
+    updateProposal(_key) {
+      proposalsRef.child(_key).update({ edit: true });
     },
-    cancelUpdateProposal(key) {
-      proposalsRef.child(key).update({ edit: false });
+    cancelUpdateProposal(_key) {
+      proposalsRef.child(_key).update({ edit: false });
     },
-    saveUpdateProposal(proposal) {
-      const key = proposal['.key'];
+    saveUpdateProposal(_proposal) {
+      const key = _proposal['.key'];
       proposalsRef.child(key).update({
-        title: proposal.title,
-        amountFunded: proposal.amountFunded,
+        title: _proposal.title,
+        amountFunded: _proposal.amountFunded,
         edit: false,
       });
     },
