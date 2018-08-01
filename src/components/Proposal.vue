@@ -27,9 +27,6 @@
 </template>
 
 <style>
-  .q-btn {
-    margin-right: 10px;
-  }
 </style>
 
 <script>

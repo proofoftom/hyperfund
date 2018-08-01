@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center column">
-    <h3 class="row">Account</h3>
+    <h3>Account</h3>
   </q-page>
 </template>
 

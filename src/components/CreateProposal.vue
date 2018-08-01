@@ -1,6 +1,5 @@
 <template>
-  <div class="flex flex-center column">
-    <h2>Create a Proposal</h2>
+  <div>
     <q-field helper="Title of the Proposal">
       <q-input
         type="text"

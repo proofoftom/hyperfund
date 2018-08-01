@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center column">
-    <h3 class="row">Proposals</h3>
+    <h3>Proposals</h3>
     <Proposals/>
   </q-page>
 </template>

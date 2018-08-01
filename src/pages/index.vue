@@ -1,11 +1,18 @@
 <template>
   <q-page class="flex flex-center column">
-    <h3 class="row">HyperFund</h3>
-    <h4 class="row">Quickly Fund Outcomes</h4>
+    <h3>HyperFund</h3>
+    <h4>Quickly Fund Outcomes</h4>
   </q-page>
 </template>
 
-<style>
+<style scoped>
+h3 {
+  margin: 0;
+}
+
+li {
+  line-height: 2em;
+}
 </style>
 
 <script>

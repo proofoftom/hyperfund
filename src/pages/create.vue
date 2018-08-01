@@ -1,5 +1,6 @@
 <template>
-  <q-page>
+  <q-page class="flex flex-center column">
+    <h3>Create a Proposal</h3>
     <CreateProposal/>
   </q-page>
 </template>
