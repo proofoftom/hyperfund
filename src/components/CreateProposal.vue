@@ -36,6 +36,7 @@ export default {
       outcomes: [
         {
           description: '',
+          amountFunded: 0,
         },
       ],
     };
