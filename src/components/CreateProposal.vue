@@ -4,7 +4,7 @@
     <q-field helper="Title of the Proposal">
       <q-input
         type="text"
-        float-label="Title"
+        float-label="Proposal"
         v-model="title"
       />
     </q-field>
@@ -14,7 +14,7 @@
     >
       <q-input
         type="textarea"
-        float-label="Proposal"
+        float-label="Outcome"
         v-model="outcome.description"
       />
     </q-field>
