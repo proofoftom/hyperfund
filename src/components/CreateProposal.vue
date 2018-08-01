@@ -1,23 +1,24 @@
 <template>
   <div class="flex flex-center column">
     <h2>Create a Proposal</h2>
-    <q-field helper="Name the potential outcome to be funded.">
+    <q-field helper="Title of the Proposal">
       <q-input
         type="text"
         float-label="Title"
         v-model="title"
       />
     </q-field>
-    <q-field
+    <q-field v-for="outcome of outcomes" :key="outcome"
       helper="Describe the potential outcome to be funded."
       :count="120"
     >
       <q-input
         type="textarea"
         float-label="Proposal"
-        v-model="description"
+        v-model="outcome.description"
       />
     </q-field>
+    <q-btn class="q-mt-xl" label="Add Outcome" @click="addOutcome()" />
     <q-btn class="q-mt-xl" label="Create Proposal" @click="createProposal()" />
   </div>
 </template>
@@ -33,14 +34,23 @@ export default {
   data() {
     return {
       title: '',
-      description: '',
+      outcomes: [
+        {
+          description: '',
+        },
+      ],
     };
   },
   methods: {
+    addOutcome() {
+      this.outcomes.push({
+        description: '',
+      });
+    },
     createProposal() {
       proposalsRef.push({
         title: this.title,
-        description: this.description,
+        outcomes: this.outcomes,
         amountFunded: 0,
         edit: false,
       });
