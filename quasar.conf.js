@@ -3,9 +3,7 @@
 module.exports = function (ctx) {
   return {
     // app plugins (/src/plugins)
-    plugins: [
-      'axios'
-    ],
+    plugins: [],
     css: [
       'app.styl'
     ],
