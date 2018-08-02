@@ -11,7 +11,7 @@
         :decimals="4"
         :step=".0001"
       />
-      <p>Ξ {{ outcome.amountFunded }}</p>
+      <p>Ξ {{ outcome.amountFunded }} Staked</p>
     </div>
     <q-btn @click="saveUpdateProposal(proposal)">Save</q-btn>
     <q-btn @click="cancelUpdateProposal(proposal['.key'])">Cancel</q-btn>
@@ -26,7 +26,7 @@
         :min="0"
         :max="8"
       />
-      <p>Ξ {{ outcome.amountFunded }}</p>
+      <p>Ξ {{ outcome.amountFunded }} Staked</p>
     </div>
     <!-- <q-btn @click="updateProposal(proposal['.key'])">Edit</q-btn> -->
     <!-- <q-btn @click="cancelProposal(proposal['.key'])">Delete</q-btn> -->
