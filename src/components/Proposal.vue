@@ -28,8 +28,8 @@
       />
       <p>Ξ {{ outcome.amountFunded }}</p>
     </div>
-    <q-btn @click="updateProposal(proposal['.key'])">Edit</q-btn>
-    <q-btn @click="cancelProposal(proposal['.key'])">Delete</q-btn>
+    <!-- <q-btn @click="updateProposal(proposal['.key'])">Edit</q-btn> -->
+    <!-- <q-btn @click="cancelProposal(proposal['.key'])">Delete</q-btn> -->
   </div>
 </template>
 
