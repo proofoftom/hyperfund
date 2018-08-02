@@ -7,7 +7,7 @@
         v-model="title"
       />
     </q-field>
-    <q-field v-for="outcome of outcomes" :key="outcome"
+    <q-field v-for="(outcome, index) of outcomes" :key="index"
       helper="Describe the potential outcome to be funded."
       :count="120"
     >
