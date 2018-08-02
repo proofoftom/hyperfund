@@ -45,13 +45,13 @@ export default {
     addOutcome() {
       this.outcomes.push({
         description: '',
+        amountFunded: 0,
       });
     },
     createProposal() {
       proposalsRef.push({
         title: this.title,
         outcomes: this.outcomes,
-        amountFunded: 0,
         edit: false,
       });
       this.$router.push('/proposals');

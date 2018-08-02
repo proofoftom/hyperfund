@@ -1,26 +1,33 @@
 <template>
   <div v-if="proposal.edit">
     <textarea v-model="proposal.title"/>
-    <q-slider
-      v-model="proposal.amountFunded"
-      :min="0"
-      :max="8"
-      :decimals="4"
-      :step=".0001"
-    />
-    <p>Ξ {{ proposal.amountFunded }}</p>
+    <div v-for="outcome in proposal.outcomes" :key="outcome">
+      {{ outcome.description }}
+      <q-slider
+        v-model="outcome.amountFunded"
+        @input="updateProposal(proposal['.key'])"
+        :min="0"
+        :max="8"
+        :decimals="4"
+        :step=".0001"
+      />
+      <p>Ξ {{ outcome.amountFunded }}</p>
+    </div>
     <q-btn @click="saveUpdateProposal(proposal)">Save</q-btn>
     <q-btn @click="cancelUpdateProposal(proposal['.key'])">Cancel</q-btn>
   </div>
   <div v-else>
     <q-card-title>{{ proposal.title }}</q-card-title>
-    <q-slider
-      v-model="proposal.amountFunded"
-      @input="updateProposal(proposal['.key'])"
-      :min="0"
-      :max="8"
-    />
-    <p>Ξ {{ proposal.amountFunded }}</p>
+    <div v-for="outcome in proposal.outcomes" :key="outcome">
+      {{ outcome.description }}
+      <q-slider
+        v-model="outcome.amountFunded"
+        @input="updateProposal(proposal['.key'])"
+        :min="0"
+        :max="8"
+      />
+      <p>Ξ {{ outcome.amountFunded }}</p>
+    </div>
     <q-btn @click="updateProposal(proposal['.key'])">Edit</q-btn>
     <q-btn @click="cancelProposal(proposal['.key'])">Delete</q-btn>
   </div>
@@ -51,7 +58,7 @@ export default {
       const key = _proposal['.key'];
       proposalsRef.child(key).update({
         title: _proposal.title,
-        amountFunded: _proposal.amountFunded,
+        outcomes: _proposal.outcomes,
         edit: false,
       });
     },
