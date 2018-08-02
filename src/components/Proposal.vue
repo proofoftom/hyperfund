@@ -1,7 +1,7 @@
 <template>
   <div v-if="proposal.edit">
     <textarea v-model="proposal.title"/>
-    <div v-for="outcome in proposal.outcomes" :key="outcome">
+    <div v-for="outcome in proposal.outcomes" :key="outcome" v-if="outcome.description != ''">
       {{ outcome.description }}
       <q-slider
         v-model="outcome.amountFunded"
@@ -18,7 +18,7 @@
   </div>
   <div v-else>
     <q-card-title>{{ proposal.title }}</q-card-title>
-    <div v-for="outcome in proposal.outcomes" :key="outcome">
+    <div v-for="outcome in proposal.outcomes" :key="outcome" v-if="outcome.description != ''">
       {{ outcome.description }}
       <q-slider
         v-model="outcome.amountFunded"
